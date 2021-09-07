@@ -1,3 +1,2 @@
 def abc():
-  
   print("echo")
