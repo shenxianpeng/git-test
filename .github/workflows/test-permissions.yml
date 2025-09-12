@@ -1,0 +1,13 @@
+name: Test permissions
+
+on:
+  workflow_dispatch:
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: ${{ github.ref == 'refs/heads/main' && 'write' || 'read' }}
+    steps:
+      - run: echo "Running on branch ${{ github.ref }}"
